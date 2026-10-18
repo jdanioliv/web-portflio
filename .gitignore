@@ -1,0 +1,39 @@
+# ==========================================
+# ARCHIVOS DE SISTEMA OPERATIVO (Windows/Mac)
+# ==========================================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ==========================================
+# CONFIGURACIÓN LOCAL DEL EDITOR
+# ==========================================
+.vscode/
+
+# ==========================================
+# SEGURIDAD: SECRETOS Y VARIABLES DE ENTORNO
+# (Vital para la Fase 3, 4 y 5: NUNCA subir claves al repo)
+# ==========================================
+.env
+.env.local
+config.secret.js
+secrets.json# ==========================================
+# ARCHIVOS DE SISTEMA OPERATIVO (Windows/Mac)
+# ==========================================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ==========================================
+# CONFIGURACIÓN LOCAL DEL EDITOR
+# ==========================================
+.vscode/
+
+# ==========================================
+# SEGURIDAD: SECRETOS Y VARIABLES DE ENTORNO
+# (Vital para la Fase 3, 4 y 5: NUNCA subir claves al repo)
+# ==========================================
+.env
+.env.local
+config.secret.js
+secrets.json
