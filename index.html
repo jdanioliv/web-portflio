@@ -11,11 +11,85 @@
 
     <title>Portfolio Web - Joao Daniel De Paiva Oliveira</title>
 
-
-
-
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+
+    <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="#inicio" class="navbar__logo">
+                <span class="logo__bracket">&lt;</span>Maru<span class="logo__slash">/</span><span class="logo__bracket">&gt;</span>
+            </a>
+
+            <ul class="navbar__links">
+                <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li><a href="#stack" class="nav-link">Stack Técnico</a></li>
+                <li><a href="#laboratorio" class="nav-link">JS Lab</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+            </ul>
+
+            <!-- Este botón abrirá el sistema de Login en la Fase 3 -->
+            <div class="navbar__actions">
+                <button type="button" class="btn btn--outline" id="auth-trigger-btn">
+                    Iniciar Sesión
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    <main>
+        <!-- HERO SECTION (Portada de alto impacto) -->
+        <section id="inicio" class="hero">
+            <div class="hero__content">
+                <p class="hero__badge">
+                    <span class="status-dot"></span> Disponible para proyectos & prácticas
+                </p>
+                
+                <h1 class="hero__title">
+                    Joao Daniel <span class="text-gradient">De Paiva Oliveira</span>
+                </h1>
+                
+                <p class="hero__subtitle">
+                    Estudiante de <strong>SMR</strong> en ruta hacia <strong>DAM</strong>, construyendo una base sólida en desarrollo de software con foco futuro en <strong>Python, Big Data e Inteligencia Artificial</strong>.
+                </p>
+
+                <!-- Botones de llamada a la acción (CTA - Call To Action) -->
+                <div class="hero__cta-group">
+                    <a href="#laboratorio" class="btn btn--primary">Explorar JS Lab</a>
+                    <a href="https://github.com/jdanioliv" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                        Ver GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta visual estilo terminal/código (le da el toque técnico no-minimalista) -->
+            <aside class="hero__visual" aria-label="Resumen técnico en formato código">
+                <div class="code-card">
+                    <div class="code-card__header">
+                        <span class="dot dot--red"></span>
+                        <span class="dot dot--yellow"></span>
+                        <span class="dot dot--green"></span>
+                        <span class="code-card__filename">developer_profile.py</span>
+                    </div>
+                    <pre class="code-card__body"><code>class Developer:
+    def __init__(self):
+        self.name = "Joao Daniel De Paiva"
+        self.alias = "Maru"
+        self.location = "Barcelona, ES"
+        self.current = "SMR -> DAM"
+        self.stack = ["Python", "HTML5", "CSS3", "Java", "Git"]
+        self.learning = ["JavaScript", "Lua/Luau", "SQL"]
+        self.goal = "Big Data & AI Engineering"
+        self.lenguajes = [Español, Inglés, Portugués]
+
+    def status(self):
+        return "Building real-world projects."</code></pre>
+                </div>
+            </aside>
+        </section>
+    </main>
+
 </body>
 </html>
