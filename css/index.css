@@ -26,9 +26,7 @@
     --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 
-   2. CSS RESET & BASE
-*/
+/* 2. CSS RESET & BASE */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -62,9 +60,7 @@ a {
     color: inherit;
 }
 
-/* 
-   3. NAVBAR
-*/
+/* 3. NAVBAR */
 
 .site-header {
     position: sticky;
@@ -141,9 +137,7 @@ a {
     width: 100%;
 }
 
-/* 
-   4. BOTONES INTERACTIVOS
-*/
+/* 4. BOTONES INTERACTIVOS */
 
 .btn {
     display: inline-flex;
@@ -193,9 +187,7 @@ a {
     box-shadow: 0 0 15px var(--accent-glow);
 }
 
-/* 
-   5. HERO SECTION
-*/
+/* 5. HERO SECTION */
 
 .hero {
     max-width: var(--max-width);
@@ -268,9 +260,7 @@ a {
     flex-wrap: wrap;
 }
 
-/* 
-   6. TARJETA VISUAL DE CÓDIGO (PYTHON CARD)
-*/
+/* 6. TARJETA VISUAL DE CÓDIGO ESTILO PYTHON */
 
 .code-card {
     background-color: var(--bg-surface);
@@ -322,9 +312,7 @@ a {
     overflow-x: auto;
 }
 
-/* 
-   7. RESPONSIVE DESIGN
-*/
+/* 7. RESPONSIVE DESIGN */
 
 @media (max-width: 900px) {
     .hero {
@@ -348,5 +336,199 @@ a {
 
     .navbar__links {
         display: none;
+    }
+}
+
+/* 8. GENERAL SECTIONS & ABOUT ME */
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.section__header {
+    margin-bottom: 3rem;
+}
+
+.section__tag {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about__text p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.about__text strong {
+    color: var(--text-primary);
+}
+
+.roadmap-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.8rem;
+}
+
+.roadmap-card__title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: var(--accent-primary);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.timeline__item {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.timeline__item--active {
+    border-left-color: var(--status-online);
+    color: var(--text-primary);
+}
+
+.timeline__step {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-secondary);
+    text-transform: uppercase;
+}
+
+/* 9. TECH STACK GRID & PROGRESS BARS */
+.stack__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+.skill-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.skill-card__name {
+    font-size: 1.2rem;
+    font-family: var(--font-mono);
+}
+
+.skill-card__badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background-color: rgba(99, 102, 241, 0.15);
+    color: var(--accent-primary);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.skill-card__badge--basic {
+    background-color: rgba(6, 182, 212, 0.15);
+    color: var(--accent-secondary);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.skill-card__desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar__fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 999px;
+}
+
+/* 10. LAB PLACEHOLDER & FOOTER */
+.badge-wip {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    vertical-align: middle;
+    padding: 0.2rem 0.6rem;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border-radius: 6px;
+}
+
+.lab-placeholder {
+    background-color: var(--bg-surface);
+    border: 1px dashed var(--border-subtle);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.site-footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 2.5rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .about__grid {
+        grid-template-columns: 1fr;
     }
 }
