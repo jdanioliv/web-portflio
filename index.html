@@ -12,6 +12,7 @@
     <title>Portfolio Web - Joao Daniel De Paiva Oliveira</title>
 
 <link rel="stylesheet" href="css/index.css">
+<script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -90,17 +91,17 @@
             </aside>
         </section>
    
-        <!-- ABOUT & ACADEMIC ROADMAP -->
+        <!-- ACADEMIC ROADMAP -->
         <section id="sobre-mi" class="section">
             <div class="section__header">
-                <span class="section__tag">// 01. PERFIL & RUTA</span>
-                <h2 class="section__title">Sobre Mí & Hoja de Ruta</h2>
+                <span class="section__tag"> 01. PERFIL & RUTA</span>
+                <h2 class="section__title">Hoja de Ruta</h2>
             </div>
 
             <div class="about__grid">
                 <div class="about__text">
                     <p>
-                        Actualmente curso <strong>SMR (Sistemas Microinformáticos y Redes)</strong> en Barcelona, construyendo una base sólida en sistemas, redes y programación estructurada.
+                        Actualmente curso <strong>SMR (Sistemas Microinformáticos y Redes)</strong> en Digitech Barcelona, construyendo una base sólida en sistemas, redes y programación estructurada.
                     </p>
                     <p>
                         Mi objetivo inmediato es dar el salto a <strong>DAM (Desarrollo de Aplicaciones Multiplataforma)</strong>, seguido de una especialización de posgrado en <strong>Big Data, Inteligencia Artificial e Ingeniería en Python</strong>.
@@ -130,7 +131,7 @@
         <!-- TECH STACK SECTION -->
         <section id="stack" class="section">
             <div class="section__header">
-                <span class="section__tag">// 02. HABILIDADES TÉCNICAS</span>
+                <span class="section__tag"> 02. HABILIDADES TÉCNICAS</span>
                 <h2 class="section__title">Stack Tecnológico</h2>
             </div>
 
@@ -142,7 +143,7 @@
                         <span class="skill-card__badge">Intermedio</span>
                     </div>
                     <p class="skill-card__desc">Lógica, automatización, estructuras de datos y base para IA/Big Data.</p>
-                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 65%;"></div></div>
+                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 70%;"></div></div>
                 </article>
 
                 <!-- HTML5 Card -->
@@ -152,7 +153,7 @@
                         <span class="skill-card__badge">Intermedio</span>
                     </div>
                     <p class="skill-card__desc">Arquitectura web semántica, SEO básico y estructura accesible.</p>
-                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 70%;"></div></div>
+                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 60%;"></div></div>
                 </article>
 
                 <!-- CSS3 Card -->
@@ -162,7 +163,7 @@
                         <span class="skill-card__badge">Intermedio</span>
                     </div>
                     <p class="skill-card__desc">Variables CSS, Flexbox, CSS Grid, animaciones y Responsive Design.</p>
-                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 65%;"></div></div>
+                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 60%;"></div></div>
                 </article>
 
                 <!-- Java Card -->
@@ -172,23 +173,82 @@
                         <span class="skill-card__badge skill-card__badge--basic">Básico</span>
                     </div>
                     <p class="skill-card__desc">Programación Orientada a Objetos (POO) y tipado fuerte para DAM.</p>
-                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 35%;"></div></div>
+                    <div class="progress-bar"><div class="progress-bar__fill" style="width: 30%;"></div></div>
                 </article>
             </div>
+
         </section>
 
-        <!-- PLACEHOLDER FOR PHASE 2 (JS LAB) -->
+        
         <section id="laboratorio" class="section">
             <div class="section__header">
-                <span class="section__tag">// 03. INTERACTIVIDAD</span>
-                <h2 class="section__title">JavaScript Lab <span class="badge-wip">Fase 2</span></h2>
+                <span class="section__tag"> 03. Interacvidad & Lógica </span>
+                <h2 class="section__title">Interactive Code Lab</h2>
             </div>
-            <div class="lab-placeholder">
-                <p></p>
+
+            <div class="lab-tabs" role="tablist">
+                <button type="button" class="lab-tab lab-tab--active" data-target="app-analyzer">
+                    Text & Data Analyzer made with JavaScript
+                </button>
+                <button type="button" class="lab-tab" data-target="app-python">
+                    Python Live Engine with PyScript
+                </button>
+                <button type="button" class="lab-tab" data-taget="app-todo">
+                    To-Do List app with local storage
+                </button>
+            </div>
+
+            <div class="lab-container">
+
+                <div id="app-analyzer" class="lab-panel" lab-panel--active>
+                    <div class="analyzer__header">
+                        <h3>Analizador de Texto y Datos en Vivo</h3>
+                        <p>Escribe o pega cualquier texto para clacular métrcias en tiempo real</p>
+                    </div>
+
+                    <textarea id="analyzer-input" class="analyzer__textarea" placeholder="Escribe o pega texto aquí..." rows="4"></textarea>
+
+                    <div class="analyzer-__stats">
+                        <div class="stat-box">
+                            <span class="stat-box__label">Caracteres</span>
+                            <span id="stats-chars" class="stat-box__value">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-box__label">Sin Espacios</span>
+                            <span id="stat-no-spaces" class="stat-box__value">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-box__label">palabras</span>
+                            <span id="stat-words" class="stat-box__value">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-box__label">Lectura</span>
+                            <span id="stat-time" class="stat-box__value">0s</span>
+                        </div>
+                        <button type="button" id="analyzer-clear-btn" class="btn btn--secondary">
+                        Limpiar Datos
+                        </button>
+                    </div>
+                    <div id="app-python" class="lab-panel">
+                    <p class="lab-wip-text"></p>
+                </div>
+
+                <div id="app-todo" class="lab-panel">
+                    <p class="lab-wip-text"></p>
+                </div>
+
+
             </div>
         </section>
 
    
     </main>
+
+    <footer class="site-footer">
+        <div class="footer__content">
+            <p>&copy; 2026 <strong>Joao Daniel De Paiva Oliveira (Maru)</strong>. Construido desde cero.</p>
+            <p class="footer__tech">Alojado en GitHub Pages</p>
+        </div>
+    </footer>
 </body>
 </html>
