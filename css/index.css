@@ -532,3 +532,431 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* 11. CODE LAB (TABS & ANALYZER)*/
+.lab-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.lab-tab {
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 0.75rem 1.3rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.lab-tab:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+}
+
+.lab-tab--active {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.lab-container {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.lab-panel {
+    display: none;
+}
+
+.lab-panel--active {
+    display: block;
+}
+
+.analyzer__header h3 {
+    margin-bottom: 0.3rem;
+}
+
+.analyzer__header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.analyzer__textarea {
+    width: 100%;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    resize: vertical;
+    margin-bottom: 1.2rem;
+}
+
+.analyzer__textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.analyzer__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.stat-box {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-box__label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.stat-box__value {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-secondary);
+}
+
+.lab-wip-text {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* 12. SECTION 04: CONSTRUCTION ZONE / WORK IN PROGRESS */
+:root {
+    --hazard-yellow: #facc15;      /* Amarillo obra / precaución */
+    --hazard-amber: #f59e0b;       /* Ámbar industrial */
+    --hazard-bg: rgba(250, 204, 21, 0.04);
+    --hazard-border: rgba(250, 204, 21, 0.35);
+}
+
+.section--wip {
+    background-color: var(--hazard-bg);
+    border: 1px dashed var(--hazard-border);
+    border-radius: 14px;
+    padding: 0 1.5rem 3rem 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cinta de precaución amarilla y negra (45 grados) */
+.hazard-tape {
+    height: 14px;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-bottom: 2.5rem;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--hazard-yellow),
+        var(--hazard-yellow) 16px,
+        #0a0e17 16px,
+        #0a0e17 32px
+    );
+    border-bottom: 1px solid var(--hazard-border);
+}
+
+.hazard-tape--bottom {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    border-bottom: none;
+    border-top: 1px solid var(--hazard-border);
+}
+
+/* Banner de aviso superior */
+.wip-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    background-color: rgba(245, 158, 11, 0.08);
+    border-left: 4px solid var(--hazard-yellow);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2.5rem;
+}
+
+.wip-banner__icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.wip-banner__tag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--hazard-yellow);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.wip-banner__desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+}
+
+/* Tarjetas estilo industrial / WIP */
+.certs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card--wip {
+    background-color: rgba(17, 24, 39, 0.9);
+    border: 1px dashed var(--hazard-border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cert-card--wip:hover {
+    transform: translateY(-4px);
+    border-style: solid;
+    border-color: var(--hazard-yellow);
+    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.12);
+}
+
+.cert-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.cert-card__org {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--hazard-amber);
+}
+
+.cert-card__status--hazard {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background-color: rgba(250, 204, 21, 0.15);
+    color: var(--hazard-yellow);
+    border: 1px solid var(--hazard-border);
+    text-transform: uppercase;
+}
+
+.cert-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.cert-card__desc {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+}
+
+.cert-card__tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.cert-card__tags li {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background-color: var(--bg-main);
+    color: var(--hazard-yellow);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+/* INTERACTIVE CERT CARDS */
+.cert-card {
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* Tarjeta Completada (CS50x - Verde Esmeralda) */
+.cert-card--done {
+    background-color: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.cert-card--done:hover {
+    transform: translateY(-5px);
+    border-color: var(--status-online);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.18);
+}
+
+.cert-card--done .cert-card__org {
+    color: var(--status-online);
+}
+
+.cert-card__status--done {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--status-online);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    text-transform: uppercase;
+}
+
+/* 13. PIE DE TARJETA CON ETIQUETAS E INDICADOR DE PESTAÑA NUEVA */
+.cert-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+}
+
+.cert-card__link-icon {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cert-card:hover .cert-card__link-icon {
+    color: var(--hazard-yellow);
+    transform: translate(3px, -3px);
+}
+
+.cert-card--done:hover .cert-card__link-icon {
+    color: var(--status-online);
+}
+
+/* 14. DEDICATED COURSE & CERTIFICATE PAGES */
+.course-header {
+    margin-bottom: 3rem;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.course-subtitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-secondary);
+    margin-bottom: 1.2rem;
+}
+
+.cert-frame {
+    background-color: var(--bg-surface);
+    border: 2px solid var(--status-online);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.cert-frame--wip {
+    border: 1px dashed var(--hazard-yellow);
+}
+
+.cert-frame__img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.cert-frame__fallback {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 280px;
+    padding: 2rem;
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    color: var(--text-secondary);
+}
+
+.cert-fallback__icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.cert-fallback__hint {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+}
+
+.lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lecture-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+}
+
+.lecture-item h3 {
+    font-family: var(--font-mono);
+    font-size: 0.98rem;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.lecture-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}

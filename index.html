@@ -20,21 +20,18 @@
     <header class="site-header">
         <nav class="navbar" aria-label="Navegación principal">
             <a href="#inicio" class="navbar__logo">
-                <span class="logo__bracket">&lt;</span>Maru<span class="logo__slash">/</span><span class="logo__bracket">&gt;</span>
+                <span class="logo__bracket">&lt;</span>Maru<span class="logo__bracket">&gt;</span>
             </a>
 
             <ul class="navbar__links">
                 <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
                 <li><a href="#stack" class="nav-link">Stack Técnico</a></li>
                 <li><a href="#laboratorio" class="nav-link">JS Lab</a></li>
-                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#certificaciones" class="nav-link">Certificados & Cursos</a></li>
             </ul>
 
-            <!-- Loggin / signup -->
-            <div class="navbar__actions">
-                <button type="button" class="btn btn--outline" id="auth-trigger-btn">
-                    Iniciar Sesión
-                </button>
+            
+            <div>
             </div>
         </nav>
     </header>
@@ -236,12 +233,157 @@
                 <div id="app-todo" class="lab-panel">
                     <p class="lab-wip-text"></p>
                 </div>
-
-
             </div>
         </section>
 
-   
+        <section id="certificaciones" class="section section--wip">
+            <div class="hazard-tape" aria-hidden="true"></div>
+
+            <div class="wip-banner">
+                <span class="wip-banner__icon">⚠️</span>
+                <div class="wip-banner__content">
+                    <span class="wip-banner__tag">ACTIVE LEARNING PIPELINE // HARVARD CS50 & MLOPS</span>
+                    <h2 class="section__title">Certificaciones & Especialización Técnica</h2>
+                    <p class="wip-banner__desc">
+                        Haz clic en cualquier tarjeta para abrir la documentación oficial del curso, el certificado verificado o el repositorio en una pestaña nueva.
+                    </p>
+                </div>
+            </div>
+
+            <div class="certs__grid">
+                <!-- 1. CS50x: COMPLETED (Reemplaza el href con el link a tu certificado o repo de GitHub) -->
+                <a href="courses/cs50x.html" class="cert-card cert-card--done">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — CS50x</span>
+                            <span class="cert-card__status cert-card__status--done">✓ Certificado Obtenido</span>
+                        </div>
+                        <h3 class="cert-card__title">Introduction to Computer Science</h3>
+                        <p class="cert-card__desc">
+                            Algoritmos, estructuras de datos en C, Python, SQL, memoria y desarrollo de aplicación web con <strong>Flask</strong>.
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>C</li>
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>SQL</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Certificado & Notas →</span>
+                    </div>
+                </a>
+
+                <!-- 2. CS50P: WORK IN PROGRESS -->
+                <a href="courses/cs50p.html" class="cert-card cert-card--wip">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — CS50P</span>
+                            <span class="cert-card__status cert-card__status--hazard">🚧 En Construcción</span>
+                        </div>
+                        <h3 class="cert-card__title">Programming with Python</h3>
+                        <p class="cert-card__desc">
+                            Dominio profundo de Python 3: expresiones regulares (Regex), pruebas unitarias (`pytest`), I/O de archivos y Programación Orientada a Objetos.
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>Python 3</li>
+                            <li>OOP</li>
+                            <li>Pytest</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Temario →</span>
+                    </div>
+                </a>
+
+                <!-- 3. CS50W: WORK IN PROGRESS -->
+                <a href="courses/cs50w.html" class="cert-card cert-card--wip">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — CS50W</span>
+                            <span class="cert-card__status cert-card__status--hazard">🚧 En Construcción</span>
+                        </div>
+                        <h3 class="cert-card__title">Web Programming with Python & JS</h3>
+                        <p class="cert-card__desc">
+                            Arquitectura de aplicaciones web escalables con <strong>Django</strong>, APIs REST, JavaScript asíncrono, CI/CD y bases de datos relacionales.
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Temario →</span>
+                    </div>
+                </a>
+
+                <!-- 4. CS50AI: WORK IN PROGRESS -->
+                <a href="courses/cs50ai.html" class="cert-card cert-card--wip">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — CS50AI</span>
+                            <span class="cert-card__status cert-card__status--hazard">⚠️ Próximo Módulo</span>
+                        </div>
+                        <h3 class="cert-card__title">Artificial Intelligence with Python</h3>
+                        <p class="cert-card__desc">
+                            Algoritmos de búsqueda en grafos, aprendizaje por refuerzo, redes neuronales, procesamiento de lenguaje natural (NLP) y optimización.
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>AI</li>
+                            <li>Machine Learning</li>
+                            <li>NLP</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Temario →</span>
+                    </div>
+                </a>
+
+                <!-- 5. CS50G: WORK IN PROGRESS -->
+                <a href="courses/cs50g.html" class="cert-card cert-card--wip">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — CS50G</span>
+                            <span class="cert-card__status cert-card__status--hazard">⚠️ Próximo Módulo</span>
+                        </div>
+                        <h3 class="cert-card__title">Introduction to Game Development</h3>
+                        <p class="cert-card__desc">
+                            Arquitectura de motores gráficos 2D y 3D, máquinas de estados (State Machines), físicas, colisiones y programación orientada a entidades.
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>Game Dev</li>
+                            <li>State Machines</li>
+                            <li>Lua / C#</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Temario →</span>
+                    </div>
+                </a>
+
+                <!-- 6. TinyML / MLOps: WORK IN PROGRESS -->
+                <a href="courses/tinyml.html" class="cert-card cert-card--wip">
+                    <div>
+                        <div class="cert-card__header">
+                            <span class="cert-card__org">HarvardX — TinyML & MLOps</span>
+                            <span class="cert-card__status cert-card__status--hazard">🔒 Ruta Avanzada</span>
+                        </div>
+                        <h3 class="cert-card__title">MLOps & Applied TinyML</h3>
+                        <p class="cert-card__desc">
+                            Despliegue de modelos de Machine Learning en producción, optimización de modelos embebidos, pipelines de datos y monitoreo (MLOps).
+                        </p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <ul class="cert-card__tags">
+                            <li>MLOps</li>
+                            <li>TinyML</li>
+                            <li>TensorFlow</li>
+                        </ul>
+                        <span class="cert-card__link-icon">Ver Programa →</span>
+                    </div>
+                </a>
+            </section>
     </main>
 
     <footer class="site-footer">
