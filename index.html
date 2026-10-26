@@ -177,61 +177,120 @@
         </section>
 
         
+        <!-- SECCIÓN 03: INTERACTIVE CODE LAB -->
         <section id="laboratorio" class="section">
             <div class="section__header">
-                <span class="section__tag"> 03. Interacvidad & Lógica </span>
+                <span class="section__tag"> 03. INTERACTIVIDAD & LÓGICA </span>
                 <h2 class="section__title">Interactive Code Lab</h2>
             </div>
 
             <div class="lab-tabs" role="tablist">
                 <button type="button" class="lab-tab lab-tab--active" data-target="app-analyzer">
-                    Text & Data Analyzer made with JavaScript
+                    01. Text & Data Analyzer (JS)
                 </button>
                 <button type="button" class="lab-tab" data-target="app-python">
-                    Python Live Engine with PyScript
+                    02. Python Live Engine (PyScript)
                 </button>
-                <button type="button" class="lab-tab" data-taget="app-todo">
-                    To-Do List app with local storage
+                <button type="button" class="lab-tab" data-target="app-todo">
+                    03. Task Manager (LocalStorage)
                 </button>
             </div>
 
             <div class="lab-container">
 
-                <div id="app-analyzer" class="lab-panel" lab-panel--active>
+                <!-- MINI-APP 1: ANALIZADOR DE TEXTO -->
+                <div id="app-analyzer" class="lab-panel lab-panel--active">
                     <div class="analyzer__header">
                         <h3>Analizador de Texto y Datos en Vivo</h3>
-                        <p>Escribe o pega cualquier texto para clacular métrcias en tiempo real</p>
+                        <p>Escribe o pega cualquier texto para calcular métricas en tiempo real.</p>
                     </div>
 
                     <textarea id="analyzer-input" class="analyzer__textarea" placeholder="Escribe o pega texto aquí..." rows="4"></textarea>
 
-                    <div class="analyzer-__stats">
+                    <div class="analyzer__stats">
                         <div class="stat-box">
                             <span class="stat-box__label">Caracteres</span>
-                            <span id="stats-chars" class="stat-box__value">0</span>
+                            <span id="stat-chars" class="stat-box__value">0</span>
                         </div>
                         <div class="stat-box">
                             <span class="stat-box__label">Sin Espacios</span>
                             <span id="stat-no-spaces" class="stat-box__value">0</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-box__label">palabras</span>
+                            <span class="stat-box__label">Palabras</span>
                             <span id="stat-words" class="stat-box__value">0</span>
                         </div>
                         <div class="stat-box">
                             <span class="stat-box__label">Lectura</span>
                             <span id="stat-time" class="stat-box__value">0s</span>
                         </div>
-                        <button type="button" id="analyzer-clear-btn" class="btn btn--secondary">
-                        Limpiar Datos
-                        </button>
                     </div>
-                    <div id="app-python" class="lab-panel">
-                    <p class="lab-wip-text"></p>
+
+                    <button type="button" id="analyzer-clear-btn" class="btn btn--secondary">
+                        Limpiar Datos
+                    </button>
                 </div>
 
+                <!-- MINI-APP 2: PYTHON LOG & ANOMALY PARSER -->
+                <div id="app-python" class="lab-panel">
+                    <div class="analyzer__header">
+                        <div class="py-header-top">
+                            <h3>Server Log & Anomaly Parser (Python 3)</h3>
+                            <span id="py-engine-status" class="engine-badge engine-badge--idle">
+                                Motor Python: En espera (Lazy Load)
+                            </span>
+                        </div>
+                        <p>Análisis de registros HTTP en tiempo real ejecutando <code>collections.Counter</code> y <code>re</code> (Regex) en Python nativo.</p>
+                    </div>
+
+                    <div id="py-loader-box" class="py-loader">
+                        <div class="spinner"></div>
+                        <p id="py-loader-text">Descargando motor WebAssembly de Python (~15MB)... Solo ocurre la primera vez que abres esta pestaña.</p>
+                    </div>
+
+                    <div id="py-workspace" class="py-workspace py-workspace--hidden">
+                        <textarea id="py-log-input" class="analyzer__textarea" rows="6">
+                            192.168.1.10 - [25/Oct/2026:10:12:01] "GET /api/users HTTP/1.1" 200
+                            10.0.0.45 - [25/Oct/2026:10:12:04] "POST /api/login HTTP/1.1" 401
+                            10.0.0.45 - [25/Oct/2026:10:12:05] "POST /api/login HTTP/1.1" 401
+                            10.0.0.45 - [25/Oct/2026:10:12:07] "POST /api/admin HTTP/1.1" 403
+                            172.16.0.8 - [25/Oct/2026:10:13:10] "GET /index.html HTTP/1.1" 200
+                            192.168.1.10 - [25/Oct/2026:10:14:22] "GET /api/data HTTP/1.1" 500
+                            10.0.0.45 - [25/Oct/2026:10:14:30] "POST /api/login HTTP/1.1" 401
+                        </textarea>
+
+                        <div class="analyzer__actions">
+                            <button type="button" id="py-run-btn" class="btn btn--primary">
+                                Ejecutar Pipeline en Python
+                            </button>
+                        </div>
+
+                        <pre class="code-card__body py-output"><code id="py-output-json">// Pulsa "Ejecutar Pipeline en Python" para procesar los registros...</code></pre>
+                    </div>
+                </div>
+
+                <!-- MINI-APP 3: TASK MANAGER CON ARQUITECTURA DESACOPLADA (STEP 2.3) -->
                 <div id="app-todo" class="lab-panel">
-                    <p class="lab-wip-text"></p>
+                    <div class="analyzer__header">
+                        <div class="py-header-top">
+                            <h3>Dev Task Manager (Persistencia Local)</h3>
+                            <span id="todo-count-badge" class="engine-badge engine-badge--ready">0 pendientes</span>
+                        </div>
+                        <p>Tus tareas se guardan en el navegador mediante una interfaz <code>TaskStorage</code> desacoplada (lista para migrar a API Python en Fase 4).</p>
+                    </div>
+
+                    <form id="todo-form" class="todo__form">
+                        <input 
+                            type="text" 
+                            id="todo-input" 
+                            class="todo__input" 
+                            placeholder="Añadir nueva tarea técnica (ej. Terminar PSet 2 de CS50P)..." 
+                            required
+                        >
+                        <button type="submit" class="btn btn--primary">Añadir Tarea</button>
+                    </form>
+
+                    <ul id="todo-list" class="todo__list"></ul>
                 </div>
             </div>
         </section>
@@ -245,13 +304,12 @@
                     <span class="wip-banner__tag">ACTIVE LEARNING PIPELINE // HARVARD CS50 & MLOPS</span>
                     <h2 class="section__title">Certificaciones & Especialización Técnica</h2>
                     <p class="wip-banner__desc">
-                        Haz clic en cualquier tarjeta para abrir la documentación oficial del curso, el certificado verificado o el repositorio en una pestaña nueva.
+                        Haz clic en cualquier tarjeta para abrir el certificado verificado y el desglose de módulos técnicos.
                     </p>
                 </div>
             </div>
-
             <div class="certs__grid">
-                <!-- 1. CS50x: COMPLETED (Reemplaza el href con el link a tu certificado o repo de GitHub) -->
+                <!-- 1. CS50x: COMPLETED -->
                 <a href="courses/cs50x.html" class="cert-card cert-card--done">
                     <div>
                         <div class="cert-card__header">
@@ -383,7 +441,10 @@
                         <span class="cert-card__link-icon">Ver Programa →</span>
                     </div>
                 </a>
-            </section>
+                </div>
+
+            <div class="hazard-tape hazard-tape--bottom" aria-hidden="true"></div>
+        </section>
     </main>
 
     <footer class="site-footer">

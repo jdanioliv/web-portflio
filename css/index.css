@@ -723,8 +723,14 @@ a {
 /* Tarjetas estilo industrial / WIP */
 .certs__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .certs__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .cert-card--wip {
@@ -959,4 +965,65 @@ a {
     .course-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* 13. PYSCRIPT LAZY LOADER & LOG PARSER UI */
+.py-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.engine-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+}
+
+.engine-badge--idle { color: var(--text-secondary); }
+.engine-badge--loading { color: #f59e0b; border-color: #f59e0b; }
+.engine-badge--ready { color: var(--status-online); border-color: var(--status-online); }
+.engine-badge--error { color: #ef4444; border-color: #ef4444; }
+
+.py-loader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--bg-main);
+    border: 1px dashed var(--border-subtle);
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(99, 102, 241, 0.2);
+    border-top-color: var(--accent-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.py-workspace--hidden {
+    display: none;
+}
+
+.py-output {
+    margin-top: 1.5rem;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    max-height: 320px;
 }
